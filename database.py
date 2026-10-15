@@ -53,28 +53,13 @@ def execute_sql(db_path, sql_query):
         columns = [desc[0] for desc in cursor.description] if cursor.description else []
         rows = cursor.fetchall()
         conn.close()
-        return columns, rows
+        return columns, rows, None
     except Exception as e:
-        print(e)
         conn.close()
-        return None, None
+        return None, None, e
+
+
 
 
 if __name__ == '__main__':
-    db_path = r"data/Chinook_Sqlite.sqlite"
-    schema = get_db_schema(db_path)
-    print(schema)
-    # sql_query = """
-    # SELECT Genre.Name, COUNT(Track.TrackId) AS track_count
-    # FROM Genre
-    # JOIN Track ON Genre.GenreId = Track.GenreId
-    # GROUP BY Genre.Name
-    # ORDER BY track_count DESC;
-    # """
-
-    # columns, rows = execute_sql(db_path, sql_query)
-
-    # print("Columns:", columns)
-    # print("Rows:")
-    # for row in rows or []:
-    #     print(row)
+    pass
