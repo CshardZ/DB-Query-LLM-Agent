@@ -18,6 +18,6 @@
 - uv - packaging
 
 ### Agent Demo
-<video src="https://github.com/user-attachments/assets/86e2d91c-6bae-42db-937c-f11d4f9e5be4" controls width="100%">
+<video src="https://github.com/user-attachments/assets/afff99a0-5614-4094-9031-568aa42f4b7d" controls width="100%">
   Your browser does not support the video tag.
 </video>
