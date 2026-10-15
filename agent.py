@@ -5,6 +5,7 @@ from rich.panel import Panel
 from rich.syntax import Syntax
 from rich.markdown import Markdown
 from rich.align import Align
+from rich.prompt import Prompt
 
 LOCAL_MODEL_NAME = "gemma3:4b"
 console = Console()
@@ -153,7 +154,8 @@ def run_agent(db_path: str, user_question: str, max_retries: int = 2):
 
 
 if __name__ == '__main__':
-    user_prompt = "Find the top 5 best-selling artists based on total track sales"
+    console.print()  # Add clean spacing before prompt
+    user_prompt = Prompt.ask("[bold cyan]Enter your database query[/]")
 
     run_agent(
         db_path=r"data/Chinook_Sqlite.sqlite",
